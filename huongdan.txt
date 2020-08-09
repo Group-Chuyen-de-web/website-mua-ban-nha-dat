@@ -1,0 +1,6 @@
+1.lấy code về khi chưa có project: git clone
+2.thêm tất cả code vào: git add .
+3.chú thích code add: git commit -m "ghi chú"
+4.đẩy lên git: git push
+5.lấy code về khi có project: git pull
+
