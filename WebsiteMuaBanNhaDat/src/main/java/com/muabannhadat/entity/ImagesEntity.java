@@ -14,5 +14,22 @@ public class ImagesEntity {
 	private long id;
 	
 	private Byte[] image;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(Byte[] image) {
+		this.image = image;
+	}
+	
 	
 }

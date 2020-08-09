@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/admin")
 public class AdminController {
 	
-	@RequestMapping(value = "/loginAdmin", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String loginAdminPage() {
 		return "index_Admin";
 		
@@ -26,7 +26,7 @@ public class AdminController {
 		if (auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
-		return "redirect:/index";
+		return "index";
 	}
 
 }

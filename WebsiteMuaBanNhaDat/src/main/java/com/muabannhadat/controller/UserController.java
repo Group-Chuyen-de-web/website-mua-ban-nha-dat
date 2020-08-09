@@ -42,19 +42,19 @@ public class UserController {
 	@Autowired
 	UserValidator userValidator;
 	
-	@RequestMapping(value = "/loginUser", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String loginCustomerPage() {
 		return "index";
 		
 	}
 	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
-		return "redirect:/index";
+		return "index";
 	}
 	
 	
@@ -94,7 +94,7 @@ public class UserController {
 //BCrypt.hashpw(userModel.getPass(), BCrypt.gensalt(12))
 		List<RoleEntity> role_id = new ArrayList<RoleEntity>();
 		
-		role_id.add(roleService.getRole("ADMIN"));
+		role_id.add(roleService.getRole("USER"));
 		
 		us.setRole_id(role_id);
 		us.setStatus("1");

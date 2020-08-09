@@ -67,6 +67,6 @@ public void setUser(UserModel user) {
 	this.user = user;
 }
 
-	
+
 	
 }
