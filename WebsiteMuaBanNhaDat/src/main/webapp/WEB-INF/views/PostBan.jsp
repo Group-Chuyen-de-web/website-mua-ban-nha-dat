@@ -102,7 +102,7 @@ input[type=text] {
 	color: #464646;
 	font-size: 1em;
 }
-input[type=select] {
+.select {
 	padding: 0.7em;
 	width: 60%;
 	background: none;
@@ -116,6 +116,7 @@ input[type=select] {
 	color: #464646;
 	font-size: 1em;
 }
+
 </style>
 </head>
 <body style="background: url(video/bann.jpg) fixed">
@@ -152,21 +153,23 @@ input[type=select] {
 				<spring:form action="savepostnew" modelAttribute="postNew">
 					<div >
 						<p class="word" style="color: white;">Tiêu Đề (*)</p>
-						<spring:input path="title"  style="border: 2px solid #f7921d;"/>
+						<spring:input path="title" style="color: #f7921d;border: 2px solid #f7921d;" />
 					</div>
+					
 					<div >
 						<p class="word" style="color: white;">Loại Tin</p>
-						<spring:select path="name_newstype" items="${types}" id="type"/>
+						<spring:select path="name_newstype" items="${types}" cssClass="select" id="type"  style="color: #f7921d;border: 2px solid #f7921d;backround:#464646"/>
+						
 					</div>
 					<div >
 						<p class="word" style="color: white;">Loại Gói</p>
-						<spring:select path="name_packagetype" items="${packages}" id="package">
+						<spring:select path="name_packagetype" items="${packages}" cssClass="select" id="package" style="color: #f7921d;border: 2px solid #f7921d;backround:#464646">
 						</spring:select>
 						
 					</div>
 					<div >
 						<p class="word" style="color: white;">Nội Dung</p>
-						<spring:input path="detail.content"/>
+						<spring:input path="detail.content" style="color: #f7921d;border: 2px solid #f7921d;"/>
 					</div>
 					<div >
 						<p class="word" style="color: white;">Diện Tích</p>
