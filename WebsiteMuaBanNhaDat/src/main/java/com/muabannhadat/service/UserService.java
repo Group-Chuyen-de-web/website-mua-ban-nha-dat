@@ -13,6 +13,8 @@ public interface UserService {
 	    public List<UsersEntity> findAll();
 	    public UsersEntity findUser(String email, String pass);
 	    public UsersEntity findOne(String name, String status);
+	    public UsersEntity findOne(String username);
+	    public boolean checkUser(String username);
 	     
 	    
 

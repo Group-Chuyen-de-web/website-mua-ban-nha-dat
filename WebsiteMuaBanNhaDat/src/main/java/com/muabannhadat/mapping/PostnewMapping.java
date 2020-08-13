@@ -15,13 +15,10 @@ public class PostnewMapping implements IMapping<PostNewModel, PostNewsEntity>{
 	public PostNewsEntity mapToEntity(PostNewModel model) {
 		PostNewsEntity entity = new PostNewsEntity();
 		entity.setTitle(model.getTitle());
-		entity.setStart_day(model.getStart_day());
-		entity.setEnd_day(model.getEnd_day());
 		//newtypeEntity
 		
 		PostDatailMapping mapping_detail = new PostDatailMapping();
 		PostDetailEntity detailEntity = mapping_detail.mapToEntity(model.getDetail());
-		entity.setId_post_detail(detailEntity);
 		
 		UsersMapping mapping_user = new UsersMapping();
 		UsersEntity usersEntity = mapping_user.mapToEntity(model.getUser());

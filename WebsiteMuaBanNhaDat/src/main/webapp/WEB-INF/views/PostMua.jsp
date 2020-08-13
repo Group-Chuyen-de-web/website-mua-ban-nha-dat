@@ -65,6 +65,7 @@
                             <div>
                                 <p>Tên Của Bạn (*)</p>
                                 <input type="text" name="ten">
+                                
                             </div> 	
                             <div> 
                                 <p class="word">Số điện thoại (*)</p>

@@ -41,5 +41,19 @@ public class UserImpl implements UserService{
 		return entity;
 	}
 
+	@Override
+	public UsersEntity findOne(String username) {
+		
+		return userRepository.findOneByUsername(username);
+	}
+
+	@Override
+	public boolean checkUser(String username) {
+		if(findOne(username)==null) {
+			return true;
+		}
+		return false;
+	}
+
 	
 }

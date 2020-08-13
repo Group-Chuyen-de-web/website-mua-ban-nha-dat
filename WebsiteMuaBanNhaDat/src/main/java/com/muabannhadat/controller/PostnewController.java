@@ -21,11 +21,7 @@ public class PostnewController {
 	@Autowired
 	PostnewValidator userValidator;
 	
-//	@PostMapping(value = "savepostnew")
-//	public String savePostnew(@ModelAttribute("postnew") @Validated PostNewModel postnew, BindingResult result) {
-//		
-//		return "redirect:/login";
-//	}
+
 	@PostMapping(value = "savepostnew")
 	public String savePostnew(@ModelAttribute("postnew") @Validated PostNewModel postnew, BindingResult result) {
 		

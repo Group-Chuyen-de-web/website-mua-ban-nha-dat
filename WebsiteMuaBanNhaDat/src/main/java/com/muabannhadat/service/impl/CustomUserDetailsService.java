@@ -25,19 +25,16 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		UsersEntity userEntity = userRepository.findOneByUsernameAndStatus(username, Constant.ACTIVE_STATUS);
-//		System.out.println(userEntity);
-		System.out.println("sâsasasasasasa");
+		UsersEntity userEntity = userRepository.findOneByUsernameAndStatus(username.toLowerCase(), Constant.ACTIVE_STATUS);
 		if (userEntity == null) {
 			throw new UsernameNotFoundException("User not found");
 		}
+		//role cua user
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		for (RoleEntity role : userEntity.getRole_id()) {
 			authorities.add(new SimpleGrantedAuthority(role.getCode()));
 		}
-//		UserModel userModel = new UserModel(userEntity.getEmail(), userEntity.getPass(), authorities);
-//		userModel.setName(userEntity.getName());
-//		return (UserDetails) userModel;
+		//put thong tin vao security de duy tri thong tin khi user login vao he thong
 		MyUser myUser = new MyUser(userEntity.getUsername(), userEntity.getPass(), true, true, true, true, authorities);
 		myUser.setFullName(userEntity.getFullname());
 		return myUser;

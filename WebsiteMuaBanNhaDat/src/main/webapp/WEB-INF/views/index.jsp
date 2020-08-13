@@ -60,6 +60,7 @@
     </head>
     <body style="background: url(${pageContext.request.contextPath}/video/bann.jpg) fixed">
         <jsp:include page="header.jsp"></jsp:include>
+       <%--  <jsp:include page="timkiem.jsp"></jsp:include> --%>
         <jsp:include page="banner.jsp"></jsp:include>
         <jsp:include page="content.jsp"></jsp:include>
         <jsp:include page="footer.jsp"></jsp:include>

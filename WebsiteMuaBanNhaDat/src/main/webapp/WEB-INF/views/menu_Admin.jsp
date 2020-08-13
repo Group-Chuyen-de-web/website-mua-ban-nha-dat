@@ -28,7 +28,7 @@
                 <li class="active"><a href="index_Admin.jsp"><i class="icon icon-home" style="color: white;"></i> <span style="color: white;">Home</span></a> </li>
                 <li> <a href="#"><i class="icon icon-signal" style="color: white;"></i> <span style="color: white;">Biểu Đồ</span></a> </li>
                 <li> <a href="#"><i class="icon icon-inbox" style="color: white;"></i> <span style="color: white;">Tiện Ích</span></a> </li>
-                <li><a href="manager_category_Admin.jsp"><i class="icon icon-th" style="color: white;"></i> <span style="color: white;">Quản Lý Danh Mục Bán</span></a></li>
+                <li><a href="manager_category_Admin"><i class="icon icon-th" style="color: white;"></i> <span style="color: white;">Quản Lý Danh Mục Bán</span></a></li>
                 <li><a href="manager_category_chothue_Admin.jsp"><i class="icon icon-th" style="color: white;"></i> <span style="color: white;">Quản Lý Danh Cho Thuê</span></a></li>
                 <li><a href="manager_product_Admin.jsp"><i class="icon icon-th" style="color: white;"></i> <span style="color: white;">Quản Lý Đăng Bài Bán</span></a></li>
                 <li><a href="manager_product_chothue.jsp"><i class="icon icon-th" style="color: white;"></i> <span style="color: white;">Quản Lý Đăng Bài Cho Thuê</span></a></li>

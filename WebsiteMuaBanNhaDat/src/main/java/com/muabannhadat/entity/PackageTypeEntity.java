@@ -1,10 +1,14 @@
 package com.muabannhadat.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,7 +26,8 @@ public class PackageTypeEntity {
 	private String price;
 	
 	private String status;
-
+	@OneToMany (mappedBy = "type_id", cascade = CascadeType.ALL)
+	private List<PostNewsEntity> post_id;
 	public long getId() {
 		return id;
 	}
@@ -63,9 +68,9 @@ public class PackageTypeEntity {
 		this.status = status;
 	}
 
-	@Override
-	public String toString() {
-		return this.name;
-	}
+//	@Override
+//	public String toString() {
+//		return this.name;
+//	}
 	
 }

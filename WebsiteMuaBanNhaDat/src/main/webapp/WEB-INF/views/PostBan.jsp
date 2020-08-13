@@ -19,7 +19,6 @@
 <link
 	href='http://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900'
 	rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/move-top.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
@@ -73,52 +72,29 @@
 	padding-left: 64px;
 	padding-right: 71px;
 }
+.select{
+padding: 0.7em;
+	width: 60%;
+	background: none;
+	border: 1px solid #D1D1D1;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	outline: none;
+	color: #464646;
+	font-size: 1em;
+}
+.error_message {
+	color: red;
+	font-size: 90%;
+	font-style: italic;
+}
 
-input[type=number] {
-	padding: 0.7em;
-	width: 60%;
-	background: none;
-	border: 1px solid #D1D1D1;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-o-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	outline: none;
-	color: #464646;
-	font-size: 1em;
-}
-input[type=text] {
-	padding: 0.7em;
-	width: 60%;
-	background: none;
-	border: 1px solid #D1D1D1;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-o-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	outline: none;
-	color: #464646;
-	font-size: 1em;
-}
-input[type=select] {
-	padding: 0.7em;
-	width: 60%;
-	background: none;
-	border: 1px solid #D1D1D1;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-o-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	outline: none;
-	color: #464646;
-	font-size: 1em;
-}
 </style>
 </head>
-<body style="background: url(video/bann.jpg) fixed">
+<body style="background: url(${pageContext.request.contextPath}/video/bann.jpg) fixed">
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
 		<div class="container">
@@ -148,41 +124,103 @@ input[type=select] {
 						
 					</div>
 				</div>
-				//HERE
-				<spring:form action="savepostnew" modelAttribute="postNew">
-					<div >
+				
+				<spring:form action="savepostnew" commandName="postNew"
+					enctype="multipart/form-data">
+					<div>
 						<p class="word" style="color: white;">Tiêu Đề (*)</p>
-						<spring:input path="title"  style="border: 2px solid #f7921d;"/>
+						<spring:input path="title"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+						<div class="error_message">
+							<spring:errors path="title"></spring:errors>
+						</div>
 					</div>
-					<div >
+
+					<div>
 						<p class="word" style="color: white;">Loại Tin</p>
-						<spring:select path="name_newstype" items="${types}" id="type"/>
-					</div>
-					<div >
-						<p class="word" style="color: white;">Loại Gói</p>
-						<spring:select path="name_packagetype" items="${packages}" id="package">
+						<spring:select path="news_id.id" cssClass="select" id="type"
+							style="color: #f7921d;border: 2px solid #f7921d;backround:#464646">
+							<%-- 	<spring:option value="-" label="--chọn loại tin"></spring:option> --%>
+
+							<spring:options items="${types}" itemValue="id" itemLabel="name" />
 						</spring:select>
-						
+
 					</div>
-					<div >
+					<div>
+						<p class="word" style="color: white;">Loại Gói</p>
+						<spring:select path="type_id.id" cssClass="select" id="package"
+							style="color: #f7921d;border: 2px solid #f7921d;backround:#464646">
+							<spring:options items="${packages}" itemValue="id"
+								itemLabel="name" />
+						</spring:select>
+
+					</div>
+					<div>
+						<p class="word" style="color: white;">Số Ngày</p>
+						<spring:input path="ngay"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+						<div class="error_message">
+							<spring:errors path="ngay"></spring:errors>
+						</div>
+					</div>
+					<div>
 						<p class="word" style="color: white;">Nội Dung</p>
-						<spring:input path="detail.content"/>
+						<spring:textarea path="detail.content" cssClass="select"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+
 					</div>
-					<div >
+
+
+					<div>
 						<p class="word" style="color: white;">Diện Tích</p>
-						<spring:input path="detail.area"/>
+						<spring:input path="detail.area"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+						<div class="error_message">
+							<spring:errors path="detail.area"></spring:errors>
+						</div>
 					</div>
-					<div >
+
+					<div>
 						<p class="word" style="color: white;">Địa chỉ</p>
-						<spring:input path="detail.address"/>
+						<spring:input path="detail.address"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+						<div class="error_message">
+							<spring:errors path="detail.address"></spring:errors>
+						</div>
 					</div>
-					<div >
-						<p class="word" style="color: white;">Số Điện Thoại</p>
-						<spring:input path="detail.phone"/>
+
+					<div>
+						<p class="word" style="color: white;">Giá</p>
+						<div style="column-count: 2">
+						<spring:input path="detail.price"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+						<span style="color: #f7921d;border: 2px solid #f7921d;">Triệu VNĐ</span>
+						</div>
+					</div>
 					
+					<div>
+						<p class="word" style="color: white;">Số Điện Thoại</p>
+						<spring:input path="detail.phone"
+							style="color: #f7921d;border: 2px solid #f7921d;" />
+						<div class="error_message">
+							<spring:errors path="detail.phone"></spring:errors>
+						</div>
 					</div>
+
+					<table>
+						<tr>
+						
+							<span class="word" style="color: white">Select a file to
+								upload</span>
+							
+							<td><input type="file" name="file" multiple="multiple" /></td>
+						</tr>
+						<tr>
+							<td><input type="submit" value="Submit" /></td>
+						</tr>
+					</table>
 				</spring:form>
-				//here
+			
 
 			</div>
 		</div>

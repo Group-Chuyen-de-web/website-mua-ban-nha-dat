@@ -10,23 +10,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.muabannhadat.authentication.MyUser;
+
 @Controller
 @RequestMapping(value = "/admin")
 public class AdminController {
-	
+	//chuyen den trang admin khi dang nhap thanh cong
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String loginAdminPage() {
 		return "index_Admin";
 		
 	}
-	
+	//logout ve trang index
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutAdmin(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if (auth != null) {
+		MyUser myUser = (MyUser) auth.getPrincipal();
+		if (myUser != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}
-		return "index";
+		return "redirect:/home";
 	}
 
+	@RequestMapping(value = "/manager_category_Admin", method = RequestMethod.GET)
+	public String managerCategoryAdminPage() {
+		return "manager_category_Admin";
+		
+	}
 }

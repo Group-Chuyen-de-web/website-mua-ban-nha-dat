@@ -1,6 +1,7 @@
 package com.muabannhadat.entity;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -28,19 +29,20 @@ public class PostNewsEntity {
 	
 	private String title;
 	
-	@OneToOne @PrimaryKeyJoinColumn
+	@ManyToOne 
+	@JoinColumn (name="type_id")
 	private PackageTypeEntity type_id;
 	
-	private String start_day;
+	private Date start_day;
 	
-	private String end_day;
+	private Date end_day;
 	
-	@ManyToOne
-	@JoinColumn (name="news_id",referencedColumnName = "id")
+	@ManyToOne 
+	@JoinColumn (name="news_id")
 	private NewsTypeEntity news_id;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY) @PrimaryKeyJoinColumn
-	private PostDetailEntity id_post_detail;
+	private PostDetailEntity detail;
 	
 	private String status;
 
@@ -52,7 +54,7 @@ public class PostNewsEntity {
 	@OneToMany(mappedBy = "post_id")
 	private List<FeedbackEntity> feedback;
 
-	@JoinColumn(name = "user_id", referencedColumnName = "id")
+	@JoinColumn(name = "user_id")
 	@ManyToOne
 	private UsersEntity user_id;
 
@@ -80,20 +82,30 @@ public class PostNewsEntity {
 		this.type_id = type_id;
 	}
 
-	public String getStart_day() {
+	
+
+	public Date getStart_day() {
 		return start_day;
 	}
 
-	public void setStart_day(String start_day) {
+	public void setStart_day(Date start_day) {
 		this.start_day = start_day;
 	}
 
-	public String getEnd_day() {
+	public Date getEnd_day() {
 		return end_day;
 	}
 
-	public void setEnd_day(String end_day) {
+	public void setEnd_day(Date end_day) {
 		this.end_day = end_day;
+	}
+
+	public PostDetailEntity getDetail() {
+		return detail;
+	}
+
+	public void setDetail(PostDetailEntity detail) {
+		this.detail = detail;
 	}
 
 	public NewsTypeEntity getNews_id() {
@@ -104,12 +116,12 @@ public class PostNewsEntity {
 		this.news_id = news_id;
 	}
 
-	public PostDetailEntity getId_post_detail() {
-		return id_post_detail;
+	public PostDetailEntity getdetail() {
+		return detail;
 	}
 
-	public void setId_post_detail(PostDetailEntity id_post_detail) {
-		this.id_post_detail = id_post_detail;
+	public void setdetail(PostDetailEntity id_post_detail) {
+		this.detail = id_post_detail;
 	}
 
 	public String getStatus() {

@@ -117,9 +117,7 @@
             <div class="header-top" style="background: rgba(0,0,0,0.4);">
                 <div class="container">	
                     <div class="header-top-in">			
-                        <div class="logo">
-                            <a href="index.jsp"><i class="fas fa-home"></i></a>
-                        </div>
+                        
                         <div class="header-in">
                             <ul class="icon1 sub-icon1">
                             <security:authorize access = "isAuthenticated()">
@@ -138,7 +136,7 @@
                         <a  class="toggleMenu" href="#" >Menu</a>
                         <ul class="nav">
                             <li id="s" class="active" style="background:rgba(0,0,0,0.4)" ><a href="home" id="menu" ><i> </i>Home</a></li>
-                            <li id="s" ><a id="menu" href="#" >NHÀ ĐẤT BÁN</a>
+                            <li id="s" ><a id="menu" href="test" >NHÀ ĐẤT BÁN</a>
                                 <ul class="drop" style="background:rgba(0,0,0,0.4);">
                                     <%--
                                         for (Category c : CategoryDAO.getListCategory()) {
@@ -149,7 +147,7 @@
                                         --%>            
                                 </ul>
                             </li> 						
-                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="#"  >Nhà Đất Cho Thuê</a>
+                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="single"  >Nhà Đất Cho Thuê</a>
                                 <ul class="drop" style="background:rgba(0,0,0,0.4);">
                                     <%--
                                         for (Category c : CategoryDAO.getListCategoryChoThue()) {
@@ -161,10 +159,11 @@
                                 </ul>
                             </li> 						  				 
                             <li id="s" ><a id="menu" href="post_news" >Đăng tin</a></li>
-                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="xaydung_kientruc.jsp"  >Xây Dựng Kiến Trúc </a></li>
-                            <li id="s" ><a id="menu" href="noi_ngoaithat.jsp" >Nội-Ngoại Thất</a></li>
-                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="phongthuy.jsp" >Phong Thủy</a></li>
-                            <li id="s" ><a  id="menu" href="lienhe.jsp">Liên Hệ</a></li>
+                           
+                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="guide" >Hướng Dẫn</a></li>
+                            <li id="s" ><a  id="menu" href="contact">Liên Hệ</a></li>
+                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="#" ><img alt="" src="${pageContext.request.contextPath}/images/vi.png"></a></li>
+                            <li id="s" style="background:rgba(0,0,0,0.4);color:white;"><a id="menu" href="#" ><img alt="" src="${pageContext.request.contextPath}/images/en.png"></a></li>
                         </ul>
                         <script type="text/javascript" src="${pageContext.request.contextPath}/js/nav.js"></script>
                     </div>
@@ -172,9 +171,7 @@
             </div>
             <div class="header-bottom-in" style="background: rgba(0,0,0,0.4);">
                 <div class="container">
-                    <%--
-                        if (users == null) {
-                    --%>
+                   
                     <div class="header-bottom-on">
                     <security:authorize access = "isAnonymous()">
                         <p class="wel" style="color:#white;" ><span style="color:white;">Xin Chào,Bạn Nên Đăng Nhập Để Sử Dụng Đầy Đủ Chức Năng <i class="fas fa-sign-in-alt"></i></span><a href="login" style="color: #white;"><span style="color:aqua;">Đăng Nhập</span></a><span style="color:white;"> Hoặc </span><i class="fas fa-sign-in-alt"></i><a href="register" style="color: #white;"><span style="color:aqua;">Tạo Tài Khoản Mới.</span></a></p>

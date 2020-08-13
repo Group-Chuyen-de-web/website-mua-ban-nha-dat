@@ -19,6 +19,7 @@ public class PostnewImpl implements PostnewService {
 	@Override
 	@Transactional
 	public void savePostnew(PostNewsEntity postnews) {
+		postnews.setStatus("0");
 		postnewRespository.save(postnews);
 	}
 
@@ -32,6 +33,11 @@ public class PostnewImpl implements PostnewService {
 	public List<PostNewsEntity> getByNewsType(String code) {
 		NewsTypeImpl impl = new NewsTypeImpl();
 		return impl.getByCode(code).getPost_id();
+	}
+
+	@Override
+	public PostNewsEntity getOne(long id) {
+		return postnewRespository.findOne(id);
 	}
 
 	

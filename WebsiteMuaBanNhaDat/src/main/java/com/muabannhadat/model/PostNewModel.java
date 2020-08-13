@@ -2,15 +2,21 @@ package com.muabannhadat.model;
 
 import java.util.List;
 
+import com.muabannhadat.entity.NewsTypeEntity;
+import com.muabannhadat.entity.PackageTypeEntity;
+
 public class PostNewModel {
 private String title;
 private String name_packagetype;
 private String name_newstype;
+private PackageTypeEntity type_id;
+private NewsTypeEntity news_id;
 private String start_day;
 private String end_day;
 private PostDetailModel detail;
 private List<CommentModel> comments;
 private List<FeedbackModel> feedbacks;
+private int ngay;
 private UserModel user;
 public String getTitle() {
 	return title;
@@ -26,6 +32,19 @@ public void setName_packagetype(String name_packagetype) {
 }
 public String getName_newstype() {
 	return name_newstype;
+}
+
+public PackageTypeEntity getType_id() {
+	return type_id;
+}
+public void setType_id(PackageTypeEntity type_id) {
+	this.type_id = type_id;
+}
+public NewsTypeEntity getNews_id() {
+	return news_id;
+}
+public void setNews_id(NewsTypeEntity news_id) {
+	this.news_id = news_id;
 }
 public void setName_newstype(String name_newstype) {
 	this.name_newstype = name_newstype;
@@ -65,6 +84,12 @@ public UserModel getUser() {
 }
 public void setUser(UserModel user) {
 	this.user = user;
+}
+public int getNgay() {
+	return ngay;
+}
+public void setNgay(int ngay) {
+	this.ngay = ngay;
 }
 
 

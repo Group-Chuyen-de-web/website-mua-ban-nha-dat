@@ -8,16 +8,10 @@
         <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
     </head>
     <body>
-        <%--
-
-            Users u = (Users) session.getAttribute("admin");
-            if (u == null) {
-                response.sendRedirect("404.jsp");
-            }
-        --%>
+       
         <!--Header-part-->
         <div id="header" style="background: rgba(0,0,0,0)">
-            <h1><a href="/admin/loginAdmin">Admin</a></h1>
+            <h1><a href="<c:url value='/quan-tri/trang-chu'/>">Admin</a></h1>
         </div>
         <!--close-Header-part--> 
         <!--top-Header-menu-->

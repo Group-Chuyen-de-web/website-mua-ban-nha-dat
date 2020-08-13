@@ -67,7 +67,7 @@ public class JPAConfig {
 	Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty(Constant.HIBERNATE_AUTO, Constant.UPDATE);
-//		properties.setProperty(Constant.HIBERNATE_AUTO, Constant.CREATE);
+	//	properties.setProperty(Constant.HIBERNATE_AUTO, Constant.CREATE);
 		properties.setProperty(Constant.HIBERNATE_AUTO, Constant.NONE);
 		properties.setProperty(Constant.HIBERNATE_ENABLE_LAZY, Constant.TRUE);
 		return properties;

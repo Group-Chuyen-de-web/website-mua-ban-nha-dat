@@ -23,12 +23,10 @@ public class NewsTypeImpl implements NewsTypeService {
 	public List<NewsTypeEntity> getAll() {
 		return newsTypeRespository.findAll();
 	}
-
 	@Override
+	@Transactional
 	public NewsTypeEntity getByCode(String code) {
-		for (NewsTypeEntity newsTypeEntity : getAll()) {
-			if(newsTypeEntity.getCode().equalsIgnoreCase(code)) return newsTypeEntity;
-		}
-		return null;
+		
+		return newsTypeRespository.findOneByCode(code);
 	}
 }

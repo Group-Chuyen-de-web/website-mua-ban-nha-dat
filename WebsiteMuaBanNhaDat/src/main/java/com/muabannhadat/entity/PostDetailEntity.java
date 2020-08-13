@@ -1,5 +1,6 @@
 package com.muabannhadat.entity;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -30,7 +31,7 @@ public class PostDetailEntity {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "ITEM_IMAGES", joinColumns = @JoinColumn(name = "detail_id"), inverseJoinColumns = @JoinColumn(name = "image_id"))
-	private Set<ImagesEntity> images;
+	private List<ImagesEntity> images;
 
 	private String phone;
 
@@ -68,11 +69,11 @@ public class PostDetailEntity {
 		this.address = address;
 	}
 
-	public Set<ImagesEntity> getImages() {
+	public List<ImagesEntity> getImages() {
 		return images;
 	}
 
-	public void setImages(Set<ImagesEntity> images) {
+	public void setImages(List<ImagesEntity> images) {
 		this.images = images;
 	}
 
