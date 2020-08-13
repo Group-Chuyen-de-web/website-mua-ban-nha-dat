@@ -311,9 +311,10 @@ window.onclick = function(event) {
 </p>
 			
 			<c:forEach items="${post.detail.images}" var="image">
-
+					<ul>
 					<li><img src="getImage/<c:out value='${image.id}'/> " alt=""
 						style="height: 253px"></li>
+						</ul>
 				</c:forEach>
 		</div>
 

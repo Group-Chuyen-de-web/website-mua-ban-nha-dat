@@ -9,6 +9,43 @@
         <title>content</title>
           <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" media="all" />
         <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.flexisel.js"></script>
+         <script src="${pageContext.request.contextPath}/js/responsiveslides.min.js"></script>
+        <script>
+            $(function ()
+            {
+                $("#slider1").responsiveSlides
+                        ({
+                            auto: true,
+                            speed: 200,
+                            namespace: "callbacks",
+                            pager: true,
+                        });
+            });
+        </script>
+        <script>
+            $(document).ready(function (c)
+            {
+                $('.alert-close').on('click', function (c)
+                {
+                    $('.message').fadeOut('slow', function (c)
+                    {
+                        $('.message').remove();
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function (c)
+            {
+                $('.alert-close1').on('click', function (c)
+                {
+                    $('.message1').fadeOut('slow', function (c)
+                    {
+                        $('.message1').remove();
+                    });
+                });
+            });
+        </script>
         <style>
         
             .col-md:hover
@@ -78,6 +115,7 @@
 								<div class="clearfix"></div>
 								<div class="col-md_img">
 									<!-- Slideshow 4 -->
+									<div class="banner">
 									<div class="slider">
 										<ul class="rslides" id="slider1">
 											<c:forEach items="${post.detail.images}" var="image">
@@ -85,12 +123,11 @@
 												<li><img src="getImage/<c:out value='${image.id}'/> "
 													alt="" style="height: 253px"></li>
 											</c:forEach>
-
 										</ul>
+
 									</div>
-									<a href="single.jsp?productID="> <img src=""
-										style="height: 253px;" alt="" />
-									</a>
+									</div>
+									
 								</div>
 
 								<div class="top-content">
@@ -119,7 +156,7 @@
 											Chi Tiêt </a>
 
 										<p class="dollar">
-											<span></span><span>Tỷ</span><span class="in-dollar">VNĐ</span>
+											<span>${post.detail.price}</span><span>Triệu</span><span class="in-dollar">VNĐ</span>
 										</p>
 										<div class="clearfix"></div>
 									</div>

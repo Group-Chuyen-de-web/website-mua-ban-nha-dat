@@ -136,7 +136,7 @@
                         <a  class="toggleMenu" href="#" >Menu</a>
                         <ul class="nav">
                             <li id="s" class="active" style="background:rgba(0,0,0,0.4)" ><a href="home" id="menu" ><i> </i>Home</a></li>
-                            <li id="s" ><a id="menu" href="test" >NHÀ ĐẤT BÁN</a>
+                            <li id="s" ><a id="menu" href="search" >NHÀ ĐẤT BÁN</a>
                                 <ul class="drop" style="background:rgba(0,0,0,0.4);">
                                     <%--
                                         for (Category c : CategoryDAO.getListCategory()) {

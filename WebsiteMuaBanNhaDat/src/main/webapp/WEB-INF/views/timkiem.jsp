@@ -14,6 +14,53 @@
 	rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery.flexisel.js"></script>
+	<script type="text/javascript">
+            jQuery(document).ready(function ($)
+            {
+                $(".scroll").click(function (event)
+                {
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+                });
+            });
+        </script>
+          <script src="${pageContext.request.contextPath}/js/responsiveslides.min.js"></script>
+        <script>
+            $(function ()
+            {
+                $("#slider1").responsiveSlides
+                        ({
+                            auto: true,
+                            speed: 200,
+                            namespace: "callbacks",
+                            pager: true,
+                        });
+            });
+        </script>
+        <script>
+            $(document).ready(function (c)
+            {
+                $('.alert-close').on('click', function (c)
+                {
+                    $('.message').fadeOut('slow', function (c)
+                    {
+                        $('.message').remove();
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function (c)
+            {
+                $('.alert-close1').on('click', function (c)
+                {
+                    $('.message1').fadeOut('slow', function (c)
+                    {
+                        $('.message1').remove();
+                    });
+                });
+            });
+        </script>
 <style>
 .col-md:hover {
 	border: 1px solid #00c6d7;
@@ -65,12 +112,12 @@ padding: 0.7em;
 </head>
 <body>
 
-	<div class="container" style="margin-top: 60px;">
+	<%-- <div class="container" style="margin-top: 60px;">
 		<div class="content">
 			<div class="content-top">
 				<h3 class="future" style="color: white;">Bộ Lọc Tìm Kiếm</h3>
 				<div class="content-top-in">
-					<%-- <div>
+					 <div>
 						<p class="word" style="color: white;">Loại Tin</p>
 						<spring:select path="type_id.id" items="${types}" itemValue="id" itemLabel="name"
 							cssClass="select" style="color:#f7921d;background: #464646" />
@@ -80,11 +127,35 @@ padding: 0.7em;
 							<p class="word" style="color: white;">Khoảng giá</p>
 							<spring:input path="detail.price" style="color:#f7921d"/>
 							<spring:input path="detail.price" style="color:#f7921d"/>
-						</div> --%>
-					</div>
-				</div>
+						</div> 
+						
+					
 			</div>
-		</div>
+			</div>
+			</div>
+			</div>
+			 --%>
+			  <div class="banner-mat" style="background:rgba(0,0,0,0.4)">
+            <div class="container">
+                <div class="banner">
+                    <!-- Slideshow 4 -->
+                    <div class="slider">
+                        <ul class="rslides" id="slider1">
+                            <li><img src="${pageContext.request.contextPath}/banner/m1.png" alt="" style="height: 626px">
+                            </li>
+                            <li><img src="${pageContext.request.contextPath}/banner/m2.jpg" alt="" style="height: 626px">
+                            </li>
+                            
+                            <li><img src="${pageContext.request.contextPath}/banner/m3.jpg" alt="" style="height: 626px">
+                            </li>
+                            <li><img src="${pageContext.request.contextPath}/banner/m4.jpg" alt="" style="height: 626px">
+                            </li>
+                        </ul>
+                    </div>
+                </div>				
+                <!-- //slider-->
+            </div>
+        </div>
 		
 		
 </body>

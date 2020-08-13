@@ -107,6 +107,11 @@ public class MainController {
 		return "NewFile1";
 
 	}
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String searchPage() {
+		return "timkiem";
+
+	}
 
 
 	@RequestMapping(value = "/post_news")
